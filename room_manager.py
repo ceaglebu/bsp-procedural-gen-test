@@ -13,7 +13,7 @@ class Level:
 
         for room in self.rooms:
             tiles_wide = room.width // TILE_SIZE
-            tiles_tall = room.width // TILE_SIZE
+            tiles_tall = room.height // TILE_SIZE
             for x in range(0, tiles_wide):
                 self.game.layers['tiles'].append(Tile(x * TILE_SIZE + room.left, room.top, TILE_SIZE, TILE_SIZE))
                 self.game.layers['tiles'].append(Tile(x * TILE_SIZE + room.left, room.top + (tiles_tall-1) * TILE_SIZE, TILE_SIZE, TILE_SIZE))
