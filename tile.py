@@ -10,3 +10,7 @@ class Tile:
 
     def update(self, dt):
         pass
+
+class Ground(Tile):
+    def draw(self, surface, offset):
+        pygame.draw.rect(surface, 'white', (Vector(self.rect.topleft) + offset, self.rect.size))

@@ -11,6 +11,7 @@ class Game:
         self.clock = pygame.time.Clock()
 
         self.layers = {
+            'ground': [],
             'tiles': [],
             'player': [],
         }
@@ -20,7 +21,8 @@ class Game:
         self.camera_offset = Vector()
 
         level = Level(self)
-        level.create_level()
+        # level.create_level()
+        level.create_level_from_dict(level.create_level_dict())
         
     def update(self, dt):
         for layer in self.layers.values():
